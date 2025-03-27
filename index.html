@@ -115,7 +115,7 @@
                 }
 
                 return prev + (v / 10 * pm.weight);
-            }, 0);
+            }, 0) / 2;
 
             // Display the results.
             const percent = `${(sum * 100).toFixed(0)}%`
@@ -138,8 +138,8 @@
             let summary = '';
             let mdSummary = '||Question|Answer|\n|---|---|---|\n';
             document.querySelectorAll(".form fieldset").forEach((f, n) => {
-                summary += `${n + 1}. ${f.querySelector("label").innerText} = ${f.querySelector("input").value}\n`;
-                mdSummary += `|${n + 1}|${f.querySelector("label").innerText}|${f.querySelector("input").value}|\n`;
+                summary += `${n + 1}. ${f.querySelector("label").innerText} = ${f.querySelector("input").value / 2}\n`;
+                mdSummary += `|${n + 1}|${f.querySelector("label").innerText}|${f.querySelector("input").value / 2}|\n`;
             });
             summary += `\n=> ${b} (${percent})`;
             mdSummary += `||Result:|${b} (${percent})|`;
